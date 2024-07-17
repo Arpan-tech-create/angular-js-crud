@@ -1,0 +1,61 @@
+/* CSS for the table */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    border: 1px solid green;
+}
+
+/* CSS for table headers */
+thead th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
+/* CSS for table rows */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* CSS for table cells */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.edit{
+
+    padding: 8px 18px;
+    border-radius: 55px;
+    border: none;
+    background-color: #4CAF50;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.edit:hover{
+    background-color: #80d683;
+}
+
+.delete{
+    padding: 8px 18px;
+    border-radius: 55px;
+    border: none;
+    background-color: red;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.delete:hover{
+    background-color: rgb(228, 112, 112);
+}

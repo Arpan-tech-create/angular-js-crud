@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Regions Dropdown</title>
+    <script src="{{ url_for('static', filename = 'js/angular.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+<body ng-controller="MainController">
+    <h1>Regions Dropdown</h1>
+
+    <div style="display: flex;flex-direction: column;align-items: center; gap: 20px; text-align: center;">
+
+
+    <select ng-model="selectedRegion" ng-options="region for region in regions" ng-change="fetchDetails()" style="text-align: center;">
+        <option value="">Select a region</option>
+    </select>
+
+    <table ng-show="details.length > 0">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>First Name</th>
+                <th>Marks</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% raw %}
+            <tr ng-repeat="detail in details">
+                <td>{{$index + 1}}</td>
+                <td>{{ detail[0] }}</td>
+                <td>{{ detail[1] }}</td>
+                <td>{{ detail[2] }}</td>
+                <td>
+                  <button class="edit">Edit</button>
+                  <button class="delete">Delete</button>
+                </td>
+                
+              </tr>
+            {% endraw %}
+        </tbody>
+    </table>
+</div>
+    <script src="{{url_for('static',filename='js/app.js')}}">
+
+    </script>
+</body>
+</html>
